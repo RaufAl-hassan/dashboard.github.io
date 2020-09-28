@@ -19,7 +19,7 @@ i {
 }
 
 body {
-  font: normal 1.6rem/1.5 sans-serif;
+  font: normal 1.6rem/1.5 "Roboto Mono", sans-serif;
   background: var(--lightColor);
   width: 100vw;
 }
@@ -38,41 +38,43 @@ a {
   min-height: 5rem;
   box-shadow: 0.2rem 0.2rem 0.2rem #ccc;
 }
+
 .main-navbar .left-nav-item i {
   cursor: pointer;
 }
+
 .main-navbar .right-nav-item li {
   padding: 0.5rem;
   cursor: pointer;
   position: relative;
 }
+
 .main-navbar .right-nav-item li i {
   position: relative;
 }
+
 .main-navbar .right-nav-item .message {
   position: absolute;
-  background: linear-gradient(
-    to right top,
-    rgb(255, 127, 80),
-    rgba(255, 166, 0, 0.589)
-  );
-  top: -100%;
-  right: -100%;
+  background: linear-gradient(to right top, red, orange);
+  top: -90%;
+  right: -40%;
   bottom: 0;
-  width: 2.5rem;
+  width: 1.5rem;
   margin: auto;
-  height: 2.5rem;
+  height: 1.5rem;
   color: var(--whiteColor);
   font-size: 1.2rem;
   text-align: center;
-  /* border-radius: 50%; */
+  border-radius: 50%;
   overflow: hidden;
 }
-.main-navbar .right-nav-item > .profile {
+
+.main-navbar .right-nav-item>.profile {
   background: var(--lightColor);
   padding: 0.5rem 1rem;
   border-radius: 1.6rem;
 }
+
 .main-navbar .right-nav-item li ul {
   position: absolute;
   right: 0;
@@ -80,7 +82,8 @@ a {
   background: var(--whiteColor);
   display: none;
 }
-.main-navbar .right-nav-item li:hover > ul {
+
+.main-navbar .right-nav-item li:hover>ul {
   display: block;
 }
 
@@ -88,20 +91,74 @@ a {
   position: fixed;
   background: var(--whiteColor);
   height: 100vh;
+  width: 5rem;
+  transition: width 0.2s ease-in-out;
+}
+
+.main-aside ul li {
+  padding: 1rem 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-aside-animate {
+  width: 20rem;
+}
+
+.main-aside ul li span {
+  transition: opacity 1s linear;
+  display: none;
+  opacity: 0;
+}
+
+.main-aside-animate ul li span {
+  display: inline-block;
+  opacity: 1;
+}
+
+.main-aside ul li>ul {
+  display: none;
+}
+
+.main-aside-animate ul li>ul {
+  margin-left: 1.5rem;
+  display: none;
+}
+
+.main-aside ul li ul>li {
+  padding: 0.5rem 0;
+}
+
+.aside-sub-links-animate-open {
+  display: block !important;
+}
+
+.aside-sub-links-animate {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 20rem !important;
+  display: block !important;
+  background: var(--whiteColor) !important;
+  padding: 1rem 2rem !important;
 }
 
 .d-flex {
   display: flex;
 }
+
 .justify-content-between {
   justify-content: space-between;
 }
+
 .justify-content-start {
   justify-content: flex-start;
 }
+
 .justify-content-center {
   justify-content: center;
 }
+
 .align-items-center {
   align-items: center;
 }
@@ -109,13 +166,23 @@ a {
 .text-black {
   color: var(--blackColor);
 }
+
+.text-grey {
+  color: #686868;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  float: right;
 }
 
 .p-1 {
   padding: 1rem;
 }
+
 .px-1 {
   padding: 0 1rem;
 }
@@ -128,7 +195,14 @@ a {
   .d-none {
     display: none;
   }
+
   .d-block {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  html {
+    font-size: 8px;
   }
 }

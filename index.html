@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
     <!-- custom css -->
     <link rel="stylesheet" href="./css/all.min.css" />
     <link rel="stylesheet" href="./css/utility.css" />
     <link rel="stylesheet" href="./css/app.css" />
     <title>Dashboard | welcome</title>
   </head>
+
   <body>
     <!-- header -->
     <header class="main-header">
@@ -17,7 +23,7 @@
         class="main-navbar d-flex justify-content-between align-items-center px-1"
       >
         <div class="left-nav-item d-flex align-items-center">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-bars hamburger-icon"></i>
           <h2 class="p-1">
             <a href=""><i class="fa fa-cogs d-none"></i> Dashboard</a>
           </h2>
@@ -31,9 +37,7 @@
                 ><i class="fa fa-envelope"
                   ><span
                     class="message d-flex align-items-center justify-content-center"
-                    >99+</span
-                  ></i
-                ></span
+                  ></span></i></span
               ><span class="d-none">Message</span>
             </div>
             <ul class="p-1">
@@ -70,44 +74,85 @@
       </nav>
     </header>
     <aside class="main-aside">
-      <ul class="p-1 text-center">
-        <li>
-          <div>
-            <a href=""><i class="fa fa-tachometer-alt"></i></a>
-            <div>Dashboard</div>
-          </div>
+      <ul class="p-1">
+        <li title="Dashboard">
+          <a href=""
+            ><i class="fa fa-tachometer-alt"></i>
+            <span>Dashboard <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
-        <li>
-          <div>
-            <a href=""><i class="fa fa-cart-arrow-down"></i></a>
-            <div>Products</div>
-          </div>
+        <li title="Charts">
+          <a href=""
+            ><i class="fa fa-chart-line"></i>
+            <span> Charts <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
-        <li>
-          <div>
-            <a href=""><i class="fa fa-chart-line"></i></a>
-            <div>Charts</div>
-          </div>
+        <li class="aside-sub-links-wrapper" title="Product">
+          <i class="fa fa-cart-arrow-down"></i
+          ><span>Products <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Product</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Product</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Product</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <div>
-            <a href=""><i class="fa fa-motorcycle"></i></a>
-            <div>Orders</div>
-          </div>
+
+        <li class="aside-sub-links-wrapper" title="Orders">
+          <i class="fa fa-motorcycle"></i>
+          <span>Order <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Orders</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Orders</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Orders</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <div>
-            <a href=""><i class="fa fa-users"></i></a>
-            <div>
-              <div>Users</div>
-            </div>
-          </div>
+        <li class="aside-sub-links-wrapper" title="Users">
+          <i class="fa fa-users"></i>
+          <span>Users <i class="fa fa-chevron-down"></i> </span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Users</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Users</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Users</a>
+            </li>
+          </ul>
         </li>
-        <li>
-          <div>
-            <a href=""><i class="fa fa-tasks"></i></a>
-            <div>Task Manager</div>
-          </div>
+        <li class="aside-sub-links-wrapper" title="Task Manager">
+          <i class="fa fa-tasks"></i>
+          <span>Task Manager <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Task</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Task</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Task</a>
+            </li>
+          </ul>
+        </li>
+        <li title="Profile">
+          <a href=""
+            ><i class="fa fa-user"></i>
+            <span>Dashboard <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
       </ul>
     </aside>
