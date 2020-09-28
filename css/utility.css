@@ -1,0 +1,134 @@
+:root {
+  --blackColor: #111;
+  --lightColor: #f4f4f4;
+  --whiteColor: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+i {
+  font-size: 2rem !important;
+}
+
+body {
+  font: normal 1.6rem/1.5 sans-serif;
+  background: var(--lightColor);
+  width: 100vw;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--blackColor);
+}
+
+.main-navbar {
+  background: var(--whiteColor);
+  min-height: 5rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #ccc;
+}
+.main-navbar .left-nav-item i {
+  cursor: pointer;
+}
+.main-navbar .right-nav-item li {
+  padding: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+.main-navbar .right-nav-item li i {
+  position: relative;
+}
+.main-navbar .right-nav-item .message {
+  position: absolute;
+  background: linear-gradient(
+    to right top,
+    rgb(255, 127, 80),
+    rgba(255, 166, 0, 0.589)
+  );
+  top: -100%;
+  right: -100%;
+  bottom: 0;
+  width: 2.5rem;
+  margin: auto;
+  height: 2.5rem;
+  color: var(--whiteColor);
+  font-size: 1.2rem;
+  text-align: center;
+  /* border-radius: 50%; */
+  overflow: hidden;
+}
+.main-navbar .right-nav-item > .profile {
+  background: var(--lightColor);
+  padding: 0.5rem 1rem;
+  border-radius: 1.6rem;
+}
+.main-navbar .right-nav-item li ul {
+  position: absolute;
+  right: 0;
+  width: 20rem;
+  background: var(--whiteColor);
+  display: none;
+}
+.main-navbar .right-nav-item li:hover > ul {
+  display: block;
+}
+
+.main-aside {
+  position: fixed;
+  background: var(--whiteColor);
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-start {
+  justify-content: flex-start;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+
+.text-black {
+  color: var(--blackColor);
+}
+.text-center {
+  text-align: center;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+.px-1 {
+  padding: 0 1rem;
+}
+
+.d-lg-none {
+  display: none;
+}
+
+@media (max-width: 76.8rem) {
+  .d-none {
+    display: none;
+  }
+  .d-block {
+    display: block;
+  }
+}
