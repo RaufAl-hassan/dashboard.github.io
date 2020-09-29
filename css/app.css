@@ -1,0 +1,52 @@
+.main-main {
+  width: 100vw;
+  overflow-y: hidden;
+}
+
+.main-main .main-main-content {
+  padding: 1rem 1rem 1rem 6rem;
+  overflow: hidden;
+}
+
+.main-main-animate {
+  padding-left: 15rem;
+}
+
+.main-main .main-main-content .shop-details-content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  grid-gap: 1rem;
+}
+
+.main-main .main-main-content .shop-details-content article {
+  height: 13rem;
+  font-size: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #ccc;
+}
+
+.main-main .main-main-content .shop-details-content article i {
+  font-size: 3rem !important;
+}
+
+
+@media (max-width: 76.8rem) {
+  .main-main .main-main-content .shop-details-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 50rem) {
+  .main-main .main-main-content .shop-details-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-main .main-main-content .shop-details-content article {
+    height: 8rem;
+    font-size: 1.8rem;
+  }
+
+  .main-main .main-main-content .shop-details-content article i {
+    font-size: 2.5rem !important;
+  }
+}

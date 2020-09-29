@@ -5,11 +5,13 @@ const asideSubLinks = document.querySelectorAll(".aside-sub-links");
 const asideSubLinksWrapper = document.querySelectorAll(
   ".aside-sub-links-wrapper"
 );
+const mainMain = document.querySelector(".main-main");
 
 // handle aside bar toggler
-if (hamburgerIcon && window.innerWidth > 300) {
+if (hamburgerIcon && window.innerWidth > 500) {
   hamburgerIcon.addEventListener("click", () => {
     asideBar.classList.toggle("main-aside-animate");
+    mainMain.classList.toggle("main-main-animate");
   });
 }
 
@@ -35,7 +37,4 @@ asideSubLinksWrapper.forEach((link) => {
         .closest(".aside-sub-links-wrapper")
         .children[2].classList.remove("aside-sub-links-animate-open");
   });
-});
-asideSubLinksWrapper.forEach((link) => {
-  link.addEventListener("click", (e) => {});
 });

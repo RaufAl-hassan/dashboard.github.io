@@ -19,7 +19,7 @@ i {
 }
 
 body {
-  font: normal 1.6rem/1.5 "Roboto Mono", sans-serif;
+  font: normal 1.6rem/1.5 "Roboto", sans-serif;
   background: var(--lightColor);
   width: 100vw;
 }
@@ -31,6 +31,13 @@ ul {
 a {
   text-decoration: none;
   color: var(--blackColor);
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
 .main-navbar {
@@ -143,8 +150,14 @@ a {
   padding: 1rem 2rem !important;
 }
 
+
+
 .d-flex {
   display: flex;
+}
+
+.d-column {
+  flex-flow: wrap column;
 }
 
 .justify-content-between {
@@ -187,11 +200,21 @@ a {
   padding: 0 1rem;
 }
 
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
 .d-lg-none {
   display: none;
 }
 
+.card {
+  background: var(--whiteColor);
+  height: 100%;
+}
+
 @media (max-width: 76.8rem) {
+
   .d-none {
     display: none;
   }
@@ -199,10 +222,11 @@ a {
   .d-block {
     display: block;
   }
+
 }
 
 @media only screen and (max-width: 30rem) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
 }
