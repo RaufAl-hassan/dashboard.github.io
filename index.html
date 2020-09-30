@@ -19,17 +19,17 @@
     <!-- left nav-item-->
     <nav class="main-navbar d-flex justify-content-between align-items-center px-1">
       <div class="left-nav-item d-flex align-items-center">
-        <i class="fa fa-bars hamburger-icon"></i>
+        <i class="fa fa-bars hamburger-icon text-grey"></i>
         <h2 class="p-1">
-          <a href=""><i class="fa fa-cogs d-none"></i> Dashboard</a>
+          <a href=""><i class="fa fa-cogs d-none"></i>Dashboard</a>
         </h2>
       </div>
       <!-- end left nav-item-->
       <!-- right nav-item-->
       <ul class="d-flex right-nav-item align-items-center">
         <li title="message">
-          <div>
-            <span><i class="fa fa-envelope"><span
+          <div class="text-grey">
+            <span><i class="fa fa-envelope "><span
                   class="message d-flex align-items-center justify-content-center"></span></i></span><span
               class="d-none">Message</span>
           </div>
@@ -40,10 +40,10 @@
             <li><i class="fa fa-user"></i> New Order</li>
           </ul>
         </li>
-        <li title="settings">
+        <li class="text-grey" title="settings">
           <i class="fa fa-cog"></i><span class="d-none">Settings</span>
         </li>
-        <li title="profile" class="profile">
+        <li title="profile" class="profile text-grey">
           <i class="fa fa-user"></i><span class="d-none"> Abdul Rauf Alhassan</span>
           <i class="fa fa-chevron-down"></i>
           <ul class="p-1">
@@ -68,8 +68,8 @@
   <!-- end header -->
   <!-- main-aside -->
   <aside class="main-aside">
-    <ul class="p-1">
-      <li title="Dashboard">
+    <ul>
+      <li class="active" title="Dashboard">
         <a href=""><i class="fa fa-tachometer-alt"></i>
           <span>Dashboard <i class="fa fa-chevron-right"></i></span></a>
       </li>
@@ -139,7 +139,7 @@
       </li>
       <li title="Profile">
         <a href=""><i class="fa fa-user"></i>
-          <span>Dashboard <i class="fa fa-chevron-right"></i></span></a>
+          <span>Profile <i class="fa fa-chevron-right"></i></span></a>
       </li>
     </ul>
   </aside>
@@ -147,49 +147,64 @@
   <!-- main main -->
   <main class="main-main">
     <div class="main-main-content">
-      <section class="shop-details">
+      <!-- shop details -->
+      <section class="shop-details mb-1">
         <h2 class="mb-1">Welcome Back,</h2>
         <div class="shop-details-content">
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-blue">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-users"></i>
               <div>20M Users</div>
             </article>
           </a>
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-black">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-eye"></i>
               <div>55k Visitors</div>
             </article>
           </a>
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-orange">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-cart-arrow-down"></i>
               <div>Products Visitors</div>
             </article>
           </a>
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-purple">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-chart-line"></i>
               <div>Charts</div>
             </article>
           </a>
 
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-indigo">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-file"></i>
               <div>Reports</div>
             </article>
           </a>
-          <a href="">
-            <article class="text-center card p-1 d-flex d-column align-items-center justify-content-center">
+          <a href="" class="card bg-steelbue">
+            <article class="text-center  p-1 d-flex d-column align-items-center justify-content-center">
               <i class="fa fa-comments"></i>
               <div>Comments</div>
             </article>
           </a>
-
         </div>
       </section>
+      <!-- end shop detials  -->
+      <!-- task new user section -->
+      <div class="task-new-users mb-1">
+        <section class="task card">
+          task
+        </section>
+        <section class="new-users card">
+          new users
+        </section>
+      </div>
+      <!-- end task new user section -->
+      <!--chart-->
+      <section>
+      </section>
+      <!-- end chart -->
     </div>
   </main>
   <!-- end main main -->
