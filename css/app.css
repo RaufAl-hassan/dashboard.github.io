@@ -4,7 +4,7 @@
 }
 
 .main-main .main-main-content {
-  padding: 1rem 1rem 1rem 6rem;
+  padding: 1rem 2.5rem 1rem 6rem;
   overflow: hidden;
 }
 
@@ -31,7 +31,7 @@
 
 .task-new-users {
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  grid-template-columns: 8fr 3fr;
   grid-gap: 1rem;
 }
 
@@ -57,6 +57,7 @@
 
   .main-main-animate {
     padding-left: 6rem;
+
   }
 
   .main-main .main-main-content .shop-details-content article i {
@@ -69,10 +70,7 @@
     grid-gap: 1rem;
   }
 
-  .task-new-users .new-users  {
-
-  }
+  .task-new-users .new-users {}
 }
 
-@media only screen and (max-width: 30rem) {
-}
+@media only screen and (max-width: 30rem) {}

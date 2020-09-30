@@ -88,7 +88,7 @@ img {
   overflow: hidden;
 }
 
-.main-navbar .right-nav-item > .profile {
+.main-navbar .right-nav-item>.profile {
   /* background: var(--lightColor); */
   padding: 0.5rem 1rem;
   border-radius: 1.6rem;
@@ -102,7 +102,7 @@ img {
   display: none;
 }
 
-.main-navbar .right-nav-item li:hover > ul {
+.main-navbar .right-nav-item li:hover>ul {
   display: block;
 }
 
@@ -142,16 +142,16 @@ img {
   opacity: 1;
 }
 
-.main-aside ul li > ul {
+.main-aside ul li>ul {
   display: none;
 }
 
-.main-aside-animate ul li > ul {
+.main-aside-animate ul li>ul {
   margin-left: 1.5rem;
   display: none;
 }
 
-.main-aside ul li ul > li {
+.main-aside ul li ul>li {
   padding: 0.5rem 0;
 }
 
@@ -206,8 +206,10 @@ img {
 }
 
 .text-right {
-  float: right;
+  text-align: right;
 }
+
+
 
 .p-1 {
   padding: 1rem;
@@ -240,6 +242,17 @@ img {
   color: #fff;
 }
 
+.bg-success {
+  background: lightgreen !important;
+
+}
+
+.bg-success a {
+  /* color: #fff !important; */
+}
+
+
+
 .bg-black {
   background: linear-gradient(#111, grey) !important;
   color: #fff;
@@ -267,12 +280,11 @@ img {
   margin: 0;
   padding: 0;
   border-collapse: collapse;
-  font-size: 1.4rem;
   width: 100%;
   overflow: hidden;
 }
 
-.table thead > tr {
+.table thead>tr {
   background: var(--lightColor);
   text-align: left;
 }
@@ -296,6 +308,7 @@ img {
 
 .table td a {
   display: block;
+  color: var(--greyColor);
 }
 
 .card {
@@ -316,17 +329,49 @@ img {
 .load-25 {
   background: linear-gradient(to right, red 25%, #ddd 25%, #ddd);
 }
+
 .load-50 {
   background: linear-gradient(to right, yellow 50%, #ddd 50%, #ddd);
 }
+
 .load-75 {
   background: linear-gradient(to right, lightgreen 75%, #ddd 75%, #ddd);
 }
+
 .load-100 {
   background: linear-gradient(to right, limegreen 100%, #ddd 100%);
 }
 
-.list-group {
+.list-group .list-item {
+  padding: 1.1rem;
+}
+
+.list-stripe .list-item:hover {
+  background: #ddd !important;
+}
+
+.list-stripe .list-item:nth-child(odd) {
+  background: var(--lightColor);
+}
+
+.btn {
+  border: none;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  background: var(--lightColor);
+  display: inline-block;
+  text-align: center;
+  margin: 1rem 0.5rem;
+}
+
+.btn-black {
+  background: var(--blackColor);
+  color: var(--whiteColor);
+}
+
+.btn-dark {
+  background: #333;
+  color: var(--whiteColor);
 }
 
 .width-5 {
@@ -345,6 +390,8 @@ img {
   .d-block {
     display: block;
   }
+
+
 }
 
 @media only screen and (max-width: 30rem) {
@@ -354,5 +401,15 @@ img {
 
   .d-xs-none {
     display: none;
+  }
+
+  .table {
+    font-size: 1.4rem;
+  }
+
+
+  .btn,
+  .btn>i {
+    font-size: 1.4rem !important;
   }
 }
