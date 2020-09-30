@@ -8,12 +8,18 @@ const asideSubLinksWrapper = document.querySelectorAll(
 const mainMain = document.querySelector(".main-main");
 
 // handle aside bar toggler
-if (hamburgerIcon && window.innerWidth > 500) {
-  hamburgerIcon.addEventListener("click", () => {
+hamburgerIcon.addEventListener("click", () => {
+  if (window.innerWidth > 500) {
     asideBar.classList.toggle("main-aside-animate");
     mainMain.classList.toggle("main-main-animate");
-  });
-}
+  }
+});
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 500) {
+    asideBar.classList.remove("main-aside-animate");
+    mainMain.classList.remove("main-main-animate");
+  }
+});
 
 // handle aside sub links
 asideSubLinksWrapper.forEach((link) => {

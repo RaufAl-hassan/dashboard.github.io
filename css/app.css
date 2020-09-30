@@ -29,7 +29,6 @@
   font-size: 3rem !important;
 }
 
-
 @media (max-width: 76.8rem) {
   .main-main .main-main-content .shop-details-content {
     grid-template-columns: repeat(3, 1fr);
@@ -46,7 +45,18 @@
     font-size: 1.8rem;
   }
 
+  .main-main .main-main-content {
+    padding-left: 6rem;
+  }
+
+  .main-main-animate {
+    padding-left: 6rem;
+  }
+
   .main-main .main-main-content .shop-details-content article i {
     font-size: 2.5rem !important;
   }
+}
+
+@media only screen and (max-width: 30rem) {
 }
