@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/RaufAl-hassan/dashboard.github.io/issues"
   },
-  "homepage": "https://github.com/RaufAl-hassan/dashboard.github.io#readme"
+  "homepage": "https://github.com/RaufAl-hassan/dashboard.github.io#readme",
+  "dependencies": {
+    "chart.js": "^2.9.3"
+  }
 }
