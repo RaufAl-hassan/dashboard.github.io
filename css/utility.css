@@ -209,8 +209,6 @@ img {
   text-align: right;
 }
 
-
-
 .p-1 {
   padding: 1rem;
 }
@@ -244,14 +242,7 @@ img {
 
 .bg-success {
   background: lightgreen !important;
-
 }
-
-.bg-success a {
-  /* color: #fff !important; */
-}
-
-
 
 .bg-black {
   background: linear-gradient(#111, grey) !important;
@@ -378,6 +369,13 @@ img {
   width: 2.5rem !important;
 }
 
+.form-select {
+  background: var(--lightColor);
+  color: var(--blackColor);
+  border: none;
+  padding: 1rem;
+}
+
 .d-none {
   display: none;
 }
@@ -390,8 +388,6 @@ img {
   .d-block {
     display: block;
   }
-
-
 }
 
 @media only screen and (max-width: 30rem) {
@@ -406,7 +402,6 @@ img {
   .table {
     font-size: 1.4rem;
   }
-
 
   .btn,
   .btn>i {
