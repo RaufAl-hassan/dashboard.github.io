@@ -17,7 +17,7 @@ const yearData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
 const daysLabel = ["mon", "tues", "wens", "thurs", "fri", "sat", "sun"];
 const daysData = [10, 20, 30, 40, 50, 60, 5];
 
-const month = [
+const monthLabel = [
   1,
   2,
   3,
@@ -82,7 +82,7 @@ const monthData = [
   30,
 ];
 
-const years = [2015, 2016, 2017, 2018, 2019, 2020];
+const yearsLabel = [2015, 2016, 2017, 2018, 2019, 2020];
 const yearsData = [1, 2, 3, 4, 5, 6];
 
 // charts bg
@@ -102,6 +102,10 @@ const yearsBackgroundColor = [
   "gold",
   "orange",
   "yellow",
+];
+const yearBackgroundColor = [...yearsBackgroundColor];
+const monthBackgroundColor = [
+  ...yearsBackgroundColor,
   "lightyellow",
   "black",
   "#333",
@@ -122,8 +126,6 @@ const yearsBackgroundColor = [
   "#135",
   "#555",
 ];
-const yearBackgroundColor = [yearsBackgroundColor];
-const monthBackgroundColor = [...yearsBackgroundColor];
 
 let orderChartUI = document.querySelector("#orders-chart").getContext("2d");
 let vistorsChartUI = document.querySelector("#visitors-chart").getContext("2d");
@@ -188,12 +190,43 @@ const newChart = (chartUI, type, data, options) => {
 };
 
 // display chart base on season
-const getSeasonData = (season) => {
+const changeSeasonChart = (season, chartUI, type, datus, options) => {
   switch (season) {
     case "day":
-      return;
+      return newChart(
+        chartUI,
+        type,
+        data(daysLabel, datus.label, daysData, daysBackgroundColor),
+        options
+      );
+    case "year":
+      return newChart(
+        chartUI,
+        type,
+        data(yearLabel, datus.label, yearData, yearBackgroundColor),
+        options
+      );
+    case "years":
+      return newChart(
+        chartUI,
+        type,
+        data(yearsLabel, datus.label, yearsData, yearsBackgroundColor),
+        options
+      );
+    case "month":
+      return newChart(
+        chartUI,
+        type,
+        data(monthLabel, datus.label, monthData, monthBackgroundColor),
+        options
+      );
     default:
-      return;
+      return newChart(
+        chartUI,
+        type,
+        data(daysLabel, datus.label, daysData, daysBackgroundColor),
+        options
+      );
   }
 };
 
@@ -212,17 +245,6 @@ let visitorChart = newChart(
 );
 
 // handle charts
-seasonsUI.forEach((season) => {
-  season.addEventListener("change", (e) => {
-    if (e.target.closest(".orders-chart")) {
-      return;
-    }
-
-    if (e.target.closest(".visitors-chart")) {
-      return;
-    }
-  });
-});
 chartsTypeUI.forEach((chartType) => {
   chartType.addEventListener("change", (e) => {
     if (e.target.closest(".orders-chart")) {
@@ -244,6 +266,34 @@ chartsTypeUI.forEach((chartType) => {
         e.target.value,
         data(daysLabel, "visitors", daysData, daysBackgroundColor),
         options()
+      );
+      return;
+    }
+  });
+});
+
+seasonsUI.forEach((season) => {
+  season.addEventListener("change", (e) => {
+    if (e.target.closest(".orders-chart")) {
+      ordersChart.destroy();
+      ordersChart = changeSeasonChart(
+        e.target.value,
+        orderChartUI,
+        chartTypes[0].value,
+        { label: "orders" },
+        options
+      );
+      return;
+    }
+
+    if (e.target.closest(".visitors-chart")) {
+      visitorChart.destroy();
+      visitorChart = changeSeasonChart(
+        e.target.value,
+        vistorsChartUI,
+        chartTypes[1].value,
+        { label: "visitors" },
+        options
       );
       return;
     }

@@ -12,17 +12,17 @@ var yearLabel = ["Jan", "Feb", "March", "Apr", "May", "Jun", "Jul", "Aug", "Sep"
 var yearData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
 var daysLabel = ["mon", "tues", "wens", "thurs", "fri", "sat", "sun"];
 var daysData = [10, 20, 30, 40, 50, 60, 5];
-var month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+var monthLabel = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 var monthData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-var years = [2015, 2016, 2017, 2018, 2019, 2020];
+var yearsLabel = [2015, 2016, 2017, 2018, 2019, 2020];
 var yearsData = [1, 2, 3, 4, 5, 6]; // charts bg
 
 var daysBackgroundColor = ["lightblue", "royalblue", "steelblue", "blue", "purple", "pink", "lightpink"];
-var yearsBackgroundColor = [].concat(daysBackgroundColor, ["violet", "indigo", "gold", "orange", "yellow", "lightyellow", "black", "#333", "#1e1e1e", "#445", "#753762", "#972", "#421", "#142", "#000", "#777", "#888", "#999", "#222", "#444", "red", "#535", "#135", "#555"]);
-var yearBackgroundColor = [yearsBackgroundColor];
+var yearsBackgroundColor = [].concat(daysBackgroundColor, ["violet", "indigo", "gold", "orange", "yellow"]);
 
-var monthBackgroundColor = _toConsumableArray(yearsBackgroundColor);
+var yearBackgroundColor = _toConsumableArray(yearsBackgroundColor);
 
+var monthBackgroundColor = [].concat(_toConsumableArray(yearsBackgroundColor), ["lightyellow", "black", "#333", "#1e1e1e", "#445", "#753762", "#972", "#421", "#142", "#000", "#777", "#888", "#999", "#222", "#444", "red", "#535", "#135", "#555"]);
 var orderChartUI = document.querySelector("#orders-chart").getContext("2d");
 var vistorsChartUI = document.querySelector("#visitors-chart").getContext("2d");
 var seasonsUI = document.querySelectorAll(".season");
@@ -76,13 +76,22 @@ var newChart = function newChart(chartUI, type, data, options) {
 }; // display chart base on season
 
 
-var getSeasonData = function getSeasonData(season) {
+var changeSeasonChart = function changeSeasonChart(season, chartUI, type, datus, options) {
   switch (season) {
     case "day":
-      return;
+      return newChart(chartUI, type, data(daysLabel, datus.label, daysData, daysBackgroundColor), options);
+
+    case "year":
+      return newChart(chartUI, type, data(yearLabel, datus.label, yearData, yearBackgroundColor), options);
+
+    case "years":
+      return newChart(chartUI, type, data(yearsLabel, datus.label, yearsData, yearsBackgroundColor), options);
+
+    case "month":
+      return newChart(chartUI, type, data(monthLabel, datus.label, monthData, monthBackgroundColor), options);
 
     default:
-      return;
+      return newChart(chartUI, type, data(daysLabel, datus.label, daysData, daysBackgroundColor), options);
   }
 }; //instantiate chart obj
 
@@ -90,17 +99,6 @@ var getSeasonData = function getSeasonData(season) {
 var ordersChart = newChart(orderChartUI, chartTypes[0].value, data(daysLabel, "orders", daysData, daysBackgroundColor), options);
 var visitorChart = newChart(vistorsChartUI, chartTypes[1].value, data(daysLabel, "visitors", daysData, daysBackgroundColor), options); // handle charts
 
-seasonsUI.forEach(function (season) {
-  season.addEventListener("change", function (e) {
-    if (e.target.closest(".orders-chart")) {
-      return;
-    }
-
-    if (e.target.closest(".visitors-chart")) {
-      return;
-    }
-  });
-});
 chartsTypeUI.forEach(function (chartType) {
   chartType.addEventListener("change", function (e) {
     if (e.target.closest(".orders-chart")) {
@@ -112,6 +110,25 @@ chartsTypeUI.forEach(function (chartType) {
     if (e.target.closest(".visitors-chart")) {
       visitorChart.destroy();
       visitorChart = newChart(vistorsChartUI, e.target.value, data(daysLabel, "visitors", daysData, daysBackgroundColor), options());
+      return;
+    }
+  });
+});
+seasonsUI.forEach(function (season) {
+  season.addEventListener("change", function (e) {
+    if (e.target.closest(".orders-chart")) {
+      ordersChart.destroy();
+      ordersChart = changeSeasonChart(e.target.value, orderChartUI, chartTypes[0].value, {
+        label: "orders"
+      }, options);
+      return;
+    }
+
+    if (e.target.closest(".visitors-chart")) {
+      visitorChart.destroy();
+      visitorChart = changeSeasonChart(e.target.value, vistorsChartUI, chartTypes[1].value, {
+        label: "visitors"
+      }, options);
       return;
     }
   });
