@@ -41,20 +41,18 @@
   grid-gap: 1rem;
 }
 
+.main-main .main-main-content .chart article {
+  overflow: hidden;
+}
+
 .main-main .main-main-content .chart article canvas {
-  width: 20rem;
+  width: 100%;
   height: 40rem;
 }
 
 @media (max-width: 76.8rem) {
   .main-main .main-main-content .shop-details-content {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .main-main .main-main-content .chart .charts-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
   }
 }
 
@@ -70,10 +68,11 @@
 
   .main-main .main-main-content {
     padding-left: 6rem;
+    padding-right: 1rem;
   }
 
   .main-main-animate {
-    padding-left: 6rem;
+    padding-left: 0rem;
   }
 
   .main-main .main-main-content .shop-details-content article i {
@@ -85,6 +84,15 @@
     grid-template-columns: 1fr;
     grid-gap: 1rem;
   }
+
+  .main-main .main-main-content .chart article canvas {
+    height: 40rem !important;
+  }
+
+  .main-main .main-main-content .chart .charts-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media only screen and (max-width: 30rem) {}
+@media only screen and (max-width: 30rem) {
+}
