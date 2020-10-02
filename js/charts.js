@@ -179,8 +179,7 @@ const options = () => {
   };
 };
 
-//  create chart obj
-
+//  create chart objz
 const newChart = (chartUI, type, data, options) => {
   return new Chart(chartUI, {
     type,
@@ -244,58 +243,46 @@ let visitorChart = newChart(
   options
 );
 
-// handle charts
+// handle changes when chartType or season changes
+const manipulateChart = (e) => {
+  // apply on orders chart
+  if (e.target.closest(".orders-chart")) {
+    // destroy chart
+    ordersChart.destroy();
+
+    // redraw chart
+    ordersChart = changeSeasonChart(
+      seasons[0].value,
+      orderChartUI,
+      chartTypes[0].value,
+      { label: "orders" },
+      options
+    );
+    return;
+  }
+  // apply on visitors chart
+  if (e.target.closest(".visitors-chart")) {
+    visitorChart.destroy();
+
+    visitorChart = changeSeasonChart(
+      seasons[1].value,
+      vistorsChartUI,
+      chartTypes[1].value,
+      { label: "visitors" },
+      options
+    );
+    return;
+  }
+};
+
 chartsTypeUI.forEach((chartType) => {
   chartType.addEventListener("change", (e) => {
-    if (e.target.closest(".orders-chart")) {
-      ordersChart.destroy();
-
-      ordersChart = newChart(
-        orderChartUI,
-        e.target.value,
-        data(daysLabel, "orders", daysData, daysBackgroundColor),
-        options()
-      );
-      return;
-    }
-    if (e.target.closest(".visitors-chart")) {
-      visitorChart.destroy();
-
-      visitorChart = newChart(
-        vistorsChartUI,
-        e.target.value,
-        data(daysLabel, "visitors", daysData, daysBackgroundColor),
-        options()
-      );
-      return;
-    }
+    manipulateChart(e);
   });
 });
 
 seasonsUI.forEach((season) => {
   season.addEventListener("change", (e) => {
-    if (e.target.closest(".orders-chart")) {
-      ordersChart.destroy();
-      ordersChart = changeSeasonChart(
-        e.target.value,
-        orderChartUI,
-        chartTypes[0].value,
-        { label: "orders" },
-        options
-      );
-      return;
-    }
-
-    if (e.target.closest(".visitors-chart")) {
-      visitorChart.destroy();
-      visitorChart = changeSeasonChart(
-        e.target.value,
-        vistorsChartUI,
-        chartTypes[1].value,
-        { label: "visitors" },
-        options
-      );
-      return;
-    }
+    manipulateChart(e);
   });
 });
