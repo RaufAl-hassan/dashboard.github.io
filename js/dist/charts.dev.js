@@ -57,7 +57,7 @@ var options = function options() {
           beginAtZero: true
         }
       }],
-      XAxes: [{
+      xAxes: [{
         ticks: {
           beginAtZero: true
         }

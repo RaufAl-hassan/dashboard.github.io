@@ -168,7 +168,7 @@ const options = () => {
           },
         },
       ],
-      XAxes: [
+      xAxes: [
         {
           ticks: {
             beginAtZero: true,
