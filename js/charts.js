@@ -171,27 +171,23 @@ const newChart = (chartUI, type, data, options) => {
 const changeSeasonChart = (season, chartUI, type, datus, options) => {
   // display data on charts section
   const displayDataBaseOnSection = (season, datus) => {
+    // display data
+    const renderDataBaseOnSeason = (data) => {
+      if (datus.label === "orders") return data;
+      if (datus.label === "visitors") return data;
+      if (datus.label === "users") return data;
+      if (datus.label === "sales") return data;
+    };
+
     switch (season) {
       case "days":
-        if (datus.label === "orders") return daysDataForOrders;
-        if (datus.label === "visitors") return daysDataforVistors;
-        if (datus.label === "users") return daysDataforVistors;
-        if (datus.label === "sales") return daysDataforVistors;
+        return renderDataBaseOnSeason(daysDataForOrders);
       case "year":
-        if (datus.label === "orders") return yearDataForOrders;
-        if (datus.label === "visitors") return yearDataForVistors;
-        if (datus.label === "users") return yearDataForVistors;
-        if (datus.label === "sales") return yearDataForVistors;
+        return renderDataBaseOnSeason(yearDataForVistors);
       case "month":
-        if (datus.label === "orders") return monthDataForOrders;
-        if (datus.label === "visitors") return monthDataForVisitors;
-        if (datus.label === "users") return monthDataForVisitors;
-        if (datus.label === "sales") return monthDataForVisitors;
+        return renderDataBaseOnSeason(monthDataForVisitors);
       case "years":
-        if (datus.label === "orders") return yearsDataForOrders;
-        if (datus.label === "visitors") return yearsDataForVisitors;
-        if (datus.label === "users") return yearsDataForVisitors;
-        if (datus.label === "sales") return yearsDataForVisitors;
+        return renderDataBaseOnSeason(yearsDataForOrders);
 
       default:
         return undefined;
