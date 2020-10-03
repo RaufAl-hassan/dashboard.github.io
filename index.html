@@ -1,435 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/utility.css" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <title>Dashboard | welcome</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet" />
-  <!-- font-awesome -->
-  <link rel="stylesheet" href="./css/all.min.css" />
-  <!-- custom css -->
-  <link rel="stylesheet" href="./css/utility.css" />
-  <link rel="stylesheet" href="./css/app.css" />
-  <title>Dashboard | welcome</title>
-</head>
-
-<body>
-  <!-- header -->
-  <header class="main-header">
-    <!-- left nav-item-->
-    <nav class="main-navbar d-flex justify-content-between align-items-center px-1">
-      <div class="left-nav-item d-flex align-items-center">
-        <i class="fa fa-bars hamburger-icon text-grey"></i>
-        <h2 class="p-1">
-          <a href=""><i class="fa fa-cogs d-sm-none"></i>Dashboard</a>
-        </h2>
-      </div>
-      <!-- end left nav-item-->
-      <!-- right nav-item-->
-      <ul class="d-flex right-nav-item align-items-center">
-        <li title="message">
-          <div class="text-grey">
-            <span><i class="fa fa-envelope"><span
-                  class="message d-flex align-items-center justify-content-center"></span></i></span><span
-              class="d-sm-none">Message</span>
-          </div>
-          <ul class="p-1">
-            <li><i class="fa fa-user"></i> New Order</li>
-            <li><i class="fa fa-user"></i> New Order</li>
-            <li><i class="fa fa-user"></i> New Order</li>
-            <li><i class="fa fa-user"></i> New Order</li>
-          </ul>
+  <body>
+    <!-- header -->
+    <header class="main-header">
+      <!-- left nav-item-->
+      <nav
+        class="main-navbar d-flex justify-content-between align-items-center px-1"
+      >
+        <div class="left-nav-item d-flex align-items-center">
+          <i class="fa fa-bars hamburger-icon text-grey"></i>
+          <h2 class="p-1">
+            <a href=""><i class="fa fa-cogs d-sm-none"></i>Dashboard</a>
+          </h2>
+        </div>
+        <!-- end left nav-item-->
+        <!-- right nav-item-->
+        <ul class="d-flex right-nav-item align-items-center">
+          <li title="message">
+            <div class="text-grey">
+              <span
+                ><i class="fa fa-envelope"
+                  ><span
+                    class="message d-flex align-items-center justify-content-center"
+                  ></span></i></span
+              ><span class="d-sm-none">Message</span>
+            </div>
+            <ul class="p-1">
+              <li><i class="fa fa-user"></i> New Order</li>
+              <li><i class="fa fa-user"></i> New Order</li>
+              <li><i class="fa fa-user"></i> New Order</li>
+              <li><i class="fa fa-user"></i> New Order</li>
+            </ul>
+          </li>
+          <li class="text-grey" title="settings">
+            <i class="fa fa-cog"></i><span class="d-sm-none">Settings</span>
+          </li>
+          <li title="profile" class="profile text-grey">
+            <i class="fa fa-user"></i
+            ><span class="d-sm-none"> Abdul Rauf Alhassan</span>
+            <i class="fa fa-chevron-down"></i>
+            <ul class="p-1">
+              <li class="d-block d-lg-none">
+                <a href=""><i class="fa fa-user"></i> Abdul Rauf Alhassan</a>
+              </li>
+              <li class="d-sm-none">
+                <a href=""><i class="fa fa-user"></i> Profile</a>
+              </li>
+              <li>
+                <a href=""><i class="fa fa-edit"></i> Edit Profile</a>
+              </li>
+              <li>
+                <a href=""><i class="fa fa-sign-out-alt"></i> Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- end right nav-item-->
+      </nav>
+    </header>
+    <!-- end header -->
+    <!-- main-aside -->
+    <aside class="main-aside">
+      <ul>
+        <li class="active" title="Dashboard">
+          <a href=""
+            ><i class="fa fa-tachometer-alt"></i>
+            <span>Dashboard <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
-        <li class="text-grey" title="settings">
-          <i class="fa fa-cog"></i><span class="d-sm-none">Settings</span>
+        <li title="Charts">
+          <a href=""
+            ><i class="fa fa-chart-line"></i>
+            <span> Charts <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
-        <li title="profile" class="profile text-grey">
-          <i class="fa fa-user"></i><span class="d-sm-none"> Abdul Rauf Alhassan</span>
-          <i class="fa fa-chevron-down"></i>
-          <ul class="p-1">
-            <li class="d-block d-lg-none">
-              <a href=""><i class="fa fa-user"></i> Abdul Rauf Alhassan</a>
-            </li>
-            <li class="d-sm-none">
-              <a href=""><i class="fa fa-user"></i> Profile</a>
+        <li class="aside-sub-links-wrapper" title="Product">
+          <i class="fa fa-cart-arrow-down"></i
+          ><span>Products <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Product</a>
             </li>
             <li>
-              <a href=""><i class="fa fa-edit"></i> Edit Profile</a>
+              <a href=""><i class="fa fa-caret-right"></i> Add Product</a>
             </li>
             <li>
-              <a href=""><i class="fa fa-sign-out-alt"></i> Logout</a>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Product</a>
             </li>
           </ul>
+        </li>
+
+        <li class="aside-sub-links-wrapper" title="Orders">
+          <i class="fa fa-motorcycle"></i>
+          <span>Order <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Orders</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Orders</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Orders</a>
+            </li>
+          </ul>
+        </li>
+        <li class="aside-sub-links-wrapper" title="Users">
+          <i class="fa fa-users"></i>
+          <span>Users <i class="fa fa-chevron-down"></i> </span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Users</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Users</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Users</a>
+            </li>
+          </ul>
+        </li>
+        <li class="aside-sub-links-wrapper" title="Task Manager">
+          <i class="fa fa-tasks"></i>
+          <span>Task Manager <i class="fa fa-chevron-down"></i></span>
+          <ul class="aside-sub-links">
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> View Task</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Add Task</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-caret-right"></i> Edit Task</a>
+            </li>
+          </ul>
+        </li>
+        <li title="Profile">
+          <a href=""
+            ><i class="fa fa-user"></i>
+            <span>Profile <i class="fa fa-chevron-right"></i></span
+          ></a>
         </li>
       </ul>
-      <!-- end right nav-item-->
-    </nav>
-  </header>
-  <!-- end header -->
-  <!-- main-aside -->
-  <aside class="main-aside">
-    <ul>
-      <li class="active" title="Dashboard">
-        <a href=""><i class="fa fa-tachometer-alt"></i>
-          <span>Dashboard <i class="fa fa-chevron-right"></i></span></a>
-      </li>
-      <li title="Charts">
-        <a href=""><i class="fa fa-chart-line"></i>
-          <span> Charts <i class="fa fa-chevron-right"></i></span></a>
-      </li>
-      <li class="aside-sub-links-wrapper" title="Product">
-        <i class="fa fa-cart-arrow-down"></i><span>Products <i class="fa fa-chevron-down"></i></span>
-        <ul class="aside-sub-links">
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> View Product</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Add Product</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Edit Product</a>
-          </li>
-        </ul>
-      </li>
+    </aside>
+    <!-- end main-aside -->
+    <!-- main main -->
+    <main class="main-main">
+      <div class="main-main-content">
+        <!-- shop details -->
+        <section class="shop-details mb-1">
+          <h2 class="mb-1">Welcome Back,</h2>
+          <div class="shop-details-content">
+            <a href="" class="card bg-blue">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-users"></i>
+                <div>20M Users</div>
+              </article>
+            </a>
+            <a href="" class="card bg-black">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-eye"></i>
+                <div>55k Visitors</div>
+              </article>
+            </a>
+            <a href="" class="card bg-orange">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-cart-arrow-down"></i>
+                <div>1.5M Products</div>
+              </article>
+            </a>
+            <a href="" class="card bg-purple">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-chart-line"></i>
+                <div>Charts</div>
+              </article>
+            </a>
 
-      <li class="aside-sub-links-wrapper" title="Orders">
-        <i class="fa fa-motorcycle"></i>
-        <span>Order <i class="fa fa-chevron-down"></i></span>
-        <ul class="aside-sub-links">
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> View Orders</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Add Orders</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Edit Orders</a>
-          </li>
-        </ul>
-      </li>
-      <li class="aside-sub-links-wrapper" title="Users">
-        <i class="fa fa-users"></i>
-        <span>Users <i class="fa fa-chevron-down"></i> </span>
-        <ul class="aside-sub-links">
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> View Users</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Add Users</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Edit Users</a>
-          </li>
-        </ul>
-      </li>
-      <li class="aside-sub-links-wrapper" title="Task Manager">
-        <i class="fa fa-tasks"></i>
-        <span>Task Manager <i class="fa fa-chevron-down"></i></span>
-        <ul class="aside-sub-links">
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> View Task</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Add Task</a>
-          </li>
-          <li>
-            <a href=""><i class="fa fa-caret-right"></i> Edit Task</a>
-          </li>
-        </ul>
-      </li>
-      <li title="Profile">
-        <a href=""><i class="fa fa-user"></i>
-          <span>Profile <i class="fa fa-chevron-right"></i></span></a>
-      </li>
-    </ul>
-  </aside>
-  <!-- end main-aside -->
-  <!-- main main -->
-  <main class="main-main">
-    <div class="main-main-content">
-      <!-- shop details -->
-      <section class="shop-details mb-1">
-        <h2 class="mb-1">Welcome Back,</h2>
-        <div class="shop-details-content">
-          <a href="" class="card bg-blue">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-users"></i>
-              <div>20M Users</div>
-            </article>
-          </a>
-          <a href="" class="card bg-black">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-eye"></i>
-              <div>55k Visitors</div>
-            </article>
-          </a>
-          <a href="" class="card bg-orange">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-cart-arrow-down"></i>
-              <div>1.5M Products</div>
-            </article>
-          </a>
-          <a href="" class="card bg-purple">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-chart-line"></i>
-              <div>Charts</div>
-            </article>
-          </a>
-
-          <a href="" class="card bg-indigo">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-file"></i>
-              <div>555 Reports</div>
-            </article>
-          </a>
-          <a href="" class="card bg-steelbue">
-            <article class="text-center p-1 d-flex d-column align-items-center justify-content-center">
-              <i class="fa fa-comments"></i>
-              <div>500K Comments</div>
-            </article>
-          </a>
+            <a href="" class="card bg-indigo">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-file"></i>
+                <div>555 Reports</div>
+              </article>
+            </a>
+            <a href="" class="card bg-steelbue">
+              <article
+                class="text-center p-1 d-flex d-column align-items-center justify-content-center"
+              >
+                <i class="fa fa-comments"></i>
+                <div>500K Comments</div>
+              </article>
+            </a>
+          </div>
+        </section>
+        <!-- end shop detials  -->
+        <!-- task new user section -->
+        <div class="task-new-users mb-1">
+          <section class="task card p-1">
+            <h2 class="mb-1"><i class="fa fa-tasks fa-2x"></i> Todays Task</h2>
+            <table class="table p-1 text-grey">
+              <thead class="text-grey">
+                <tr>
+                  <th>Task</th>
+                  <th class="d-xs-none">Description</th>
+                  <th>Progress</th>
+                  <th class="d-sm-none text-center">Percentage</th>
+                </tr>
+              </thead>
+              <tbody class="text-grey">
+                <tr>
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 0% </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress load-25"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 25% </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress load-50"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 50% </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress load-75"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 75% </a>
+                  </td>
+                </tr>
+                <tr class="bg-success">
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress load-100"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 100% </a>
+                  </td>
+                </tr>
+                <tr class="bg-success">
+                  <td><a href="">Pay The Bills</a></td>
+                  <td class="d-xs-none">
+                    <a href="">Pay the electrical bills</a>
+                  </td>
+                  <td>
+                    <a href="">
+                      <div class="progress load-100"></div>
+                    </a>
+                  </td>
+                  <td class="d-sm-none text-center">
+                    <a href=""> 100% </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="text-center">
+              <a href="" class="btn btn-dark"
+                >Show More <i class="fa fa-caret-down"></i
+              ></a>
+            </div>
+          </section>
+          <section class="new-users card p-1">
+            <h2 class="mb-1"><i class="fa fa-users"></i> New Users</h2>
+            <ul class="list-group list-stripe">
+              <li class="list-item">
+                <a href="" class="d-flex justify-content-between text-grey">
+                  <div class="width-5">
+                    <img src="./img/profile.png" alt="" />
+                  </div>
+                  <h4>John Deo..</h4>
+                  <span class="date">September 30, 2020</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="d-flex justify-content-between text-grey">
+                  <div class="width-5">
+                    <img src="./img/profile.png" alt="" />
+                  </div>
+                  <h4>John Deo</h4>
+                  <span class="date">September 30, 2020</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="d-flex justify-content-between text-grey">
+                  <div class="width-5">
+                    <img src="./img/profile.png" alt="" />
+                  </div>
+                  <h4>John Deo</h4>
+                  <span class="date">September 30, 2020</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="d-flex justify-content-between text-grey">
+                  <div class="width-5">
+                    <img src="./img/profile.png" alt="" />
+                  </div>
+                  <h4>John Deo</h4>
+                  <span class="date">September 30, 2020</span>
+                </a>
+              </li>
+              <li class="list-item">
+                <a href="" class="d-flex justify-content-between text-grey">
+                  <div class="width-5">
+                    <img src="./img/profile.png" alt="" />
+                  </div>
+                  <h4>John Deo</h4>
+                  <span class="date">September 30, 2020</span>
+                </a>
+              </li>
+            </ul>
+            <div class="text-center">
+              <a href="" class="btn btn-dark"
+                >Show More <i class="fa fa-caret-down"></i
+              ></a>
+            </div>
+          </section>
         </div>
-      </section>
-      <!-- end shop detials  -->
-      <!-- task new user section -->
-      <div class="task-new-users mb-1">
-        <section class="task card p-1">
-          <h2 class="mb-1"><i class="fa fa-tasks fa-2x"></i> Todays Task</h2>
-          <table class="table p-1 text-grey">
-            <thead class="text-grey">
-              <tr>
-                <th>Task</th>
-                <th class="d-xs-none">Description</th>
-                <th>Progress</th>
-                <th class="d-sm-none text-center">Percentage</th>
-              </tr>
-            </thead>
-            <tbody class="text-grey">
-              <tr>
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 0% </a>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress load-25"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 25% </a>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress load-50"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 50% </a>
-                </td>
-              </tr>
-              <tr>
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress load-75"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 75% </a>
-                </td>
-              </tr>
-              <tr class="bg-success">
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress load-100"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 100% </a>
-                </td>
-              </tr>
-              <tr class="bg-success">
-                <td><a href="">Pay The Bills</a></td>
-                <td class="d-xs-none">
-                  <a href="">Pay the electrical bills</a>
-                </td>
-                <td>
-                  <a href="">
-                    <div class="progress load-100"></div>
-                  </a>
-                </td>
-                <td class="d-sm-none text-center">
-                  <a href=""> 100% </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="text-center">
-            <a href="" class="btn btn-dark">Show More <i class="fa fa-caret-down"></i></a>
+        <!-- end task new user section -->
+        <!--chart-->
+        <section class="chart">
+          <h2><i class="fa fa-chart-line"></i> Charts</h2>
+          <div class="charts-wrapper">
+            <!-- orders -->
+            <article class="card p-1 orders-chart">
+              <h3 class="d-flex justify-content-between align-items-center">
+                Orders Chart
+                <div>
+                  <!-- chart type -->
+                  <select name="" class="chart-type form-select">
+                    <option value="bar">Bar Chart</option>
+                    <option value="line">Line Chart</option>
+                    <option value="pie">Pie Chart</option>
+                    <option value="horizontalBar">Horizontal Bar</option>
+                    <option value="doughnut">Doughnut</option>
+                    <option value="polarArea">Polar Area</option>
+                  </select>
+                  <!-- end chart type -->
+                  <!-- season -->
+                  <select name="" class="season form-select">
+                    <option value="days">Days</option>
+                    <option value="year">Year</option>
+                    <option value="years">Years</option>
+                    <option value="month">month</option>
+                  </select>
+                  <!-- end season -->
+                </div>
+              </h3>
+              <canvas id="orders-chart"></canvas>
+            </article>
+            <!-- end orders -->
+            <!-- visitors -->
+            <article class="card p-1 visitors-chart">
+              <h3 class="d-flex justify-content-between align-items-center">
+                Visitors Chart
+                <div>
+                  <!-- chart type -->
+                  <select name="" class="chart-type form-select">
+                    <option value="bar">Bar Chart</option>
+                    <option value="line">Line Chart</option>
+                    <option value="pie">Pie Chart</option>
+                    <option value="horizontalBar">Horizontal Bar</option>
+                    <option value="doughnut">Doughnut</option>
+                    <option value="polarArea">Polar Area</option>
+                  </select>
+                  <!-- end chart type -->
+                  <!-- season -->
+                  <select name="" class="season form-select">
+                    <option value="days">Days</option>
+                    <option value="year">Year</option>
+                    <option value="years">Years</option>
+                    <option value="month">month</option>
+                  </select>
+                  <!-- end season -->
+                </div>
+              </h3>
+              <canvas id="visitors-chart"></canvas>
+            </article>
+            <!-- end visitors -->
+            <!-- users -->
+            <article class="card p-1 users-chart">
+              <h3 class="d-flex justify-content-between align-items-center">
+                Users Chart
+                <div>
+                  <!-- chart type -->
+                  <select name="" class="chart-type form-select">
+                    <option value="bar">Bar Chart</option>
+                    <option value="line">Line Chart</option>
+                    <option value="pie">Pie Chart</option>
+                    <option value="horizontalBar">Horizontal Bar</option>
+                    <option value="doughnut">Doughnut</option>
+                    <option value="polarArea">Polar Area</option>
+                  </select>
+                  <!-- end chart type -->
+                  <!-- season -->
+                  <select name="" class="season form-select">
+                    <option value="days">Days</option>
+                    <option value="year">Year</option>
+                    <option value="years">Years</option>
+                    <option value="month">month</option>
+                  </select>
+                  <!-- end season -->
+                </div>
+              </h3>
+              <canvas id="users-chart"></canvas>
+            </article>
+            <!-- end users -->
+            <!-- sales -->
+            <article class="card p-1 sales-chart">
+              <h3 class="d-flex justify-content-between align-items-center">
+                Sales Chart
+                <div>
+                  <!-- chart type -->
+                  <select name="" class="chart-type form-select">
+                    <option value="bar">Bar Chart</option>
+                    <option value="line">Line Chart</option>
+                    <option value="pie">Pie Chart</option>
+                    <option value="horizontalBar">Horizontal Bar</option>
+                    <option value="doughnut">Doughnut</option>
+                    <option value="polarArea">Polar Area</option>
+                  </select>
+                  <!-- end chart type -->
+                  <!-- season -->
+                  <select name="" class="season form-select">
+                    <option value="days">Days</option>
+                    <option value="year">Year</option>
+                    <option value="years">Years</option>
+                    <option value="month">month</option>
+                  </select>
+                  <!-- end season -->
+                </div>
+              </h3>
+              <canvas id="sales-chart"></canvas>
+            </article>
+            <!-- end sales -->
           </div>
         </section>
-        <section class="new-users card p-1">
-          <h2 class="mb-1"><i class="fa fa-users"></i> New Users</h2>
-          <ul class="list-group list-stripe">
-            <li class="list-item">
-              <a href="" class="d-flex justify-content-between text-grey">
-                <div class="width-5">
-                  <img src="./img/profile.png" alt="" />
-                </div>
-                <h4>John Deo..</h4>
-                <span class="date">September 30, 2020</span>
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="" class="d-flex justify-content-between text-grey">
-                <div class="width-5">
-                  <img src="./img/profile.png" alt="" />
-                </div>
-                <h4>John Deo</h4>
-                <span class="date">September 30, 2020</span>
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="" class="d-flex justify-content-between text-grey">
-                <div class="width-5">
-                  <img src="./img/profile.png" alt="" />
-                </div>
-                <h4>John Deo</h4>
-                <span class="date">September 30, 2020</span>
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="" class="d-flex justify-content-between text-grey">
-                <div class="width-5">
-                  <img src="./img/profile.png" alt="" />
-                </div>
-                <h4>John Deo</h4>
-                <span class="date">September 30, 2020</span>
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="" class="d-flex justify-content-between text-grey">
-                <div class="width-5">
-                  <img src="./img/profile.png" alt="" />
-                </div>
-                <h4>John Deo</h4>
-                <span class="date">September 30, 2020</span>
-              </a>
-            </li>
-          </ul>
-          <div class="text-center">
-            <a href="" class="btn btn-dark">Show More <i class="fa fa-caret-down"></i></a>
-          </div>
-        </section>
+        <!-- end chart -->
       </div>
-      <!-- end task new user section -->
-      <!--chart-->
-      <section class="chart">
-        <h2><i class="fa fa-chart-line"></i> Charts</h2>
-        <div class="charts-wrapper">
-          <!-- orders -->
-          <article class="card p-1 orders-chart">
-            <h3 class="d-flex justify-content-between align-items-center">
-              Orders Chart
-              <div>
-                <!-- chart type -->
-                <select name="" class="chart-type form-select">
-                  <option value="bar">Bar Chart</option>
-                  <option value="line">Line Chart</option>
-                  <option value="pie">Pie Chart</option>
-                  <option value="horizontalBar">Horizontal Bar</option>
-                  <option value="doughnut">Doughnut</option>
-                  <option value="polarArea">Polar Area</option>
-                </select>
-                <!-- end chart type -->
-                <!-- season -->
-                <select name="" class="season form-select">
-                  <option value="days">Days</option>
-                  <option value="year">Year</option>
-                  <option value="years">Years</option>
-                  <option value="month">month</option>
-                </select>
-                <!-- end season -->
-              </div>
-            </h3>
-            <canvas id="orders-chart"></canvas>
-          </article>
-          <!-- end orders -->
-          <!-- visitors -->
-          <article class="card p-1 visitors-chart">
-            <h3 class="d-flex justify-content-between align-items-center">
-              Visitors Chart
-              <div>
-                <!-- chart type -->
-                <select name="" class="chart-type form-select">
-                  <option value="bar">Bar Chart</option>
-                  <option value="line">Line Chart</option>
-                  <option value="pie">Pie Chart</option>
-                  <option value="horizontalBar">Horizontal Bar</option>
-                  <option value="doughnut">Doughnut</option>
-                  <option value="polarArea">Polar Area</option>
-                </select>
-                <!-- end chart type -->
-                <!-- season -->
-                <select name="" class="season form-select">
-                  <option value="days">Days</option>
-                  <option value="year">Year</option>
-                  <option value="years">Years</option>
-                  <option value="month">month</option>
-                </select>
-                <!-- end season -->
-              </div>
-            </h3>
-            <canvas id="visitors-chart"></canvas>
-          </article>
-          <!-- end visitors -->
-          <!-- users -->
-          <article></article>
-          <!-- end users -->
-          <!-- sales -->
-          <article></article>
-          <!-- end sales -->
-        </div>
-      </section>
-      <!-- end chart -->
-    </div>
-  </main>
-  <!-- end main main -->
-  <!-- chart js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="./node_modules/chart.js/dist/Chart.bundle.min.js"></script>
-  <!-- custom js -->
-  <script src="./js/utility.js"></script>
-  <script src="./js/charts.js"></script>
-  <script src="./js/app.js"></script>
-</body>
-
+    </main>
+    <!-- end main main -->
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="./node_modules/chart.js/dist/Chart.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="./js/utility.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
 </html>

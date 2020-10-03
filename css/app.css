@@ -41,13 +41,13 @@
   grid-gap: 1rem;
 }
 
-.main-main .main-main-content .chart article {
+.main-main .main-main-content .chart .charts-wrapper article {
+  min-height: 40rem;
   overflow: hidden;
 }
 
 .main-main .main-main-content .chart article canvas {
   width: 100%;
-  min-height: 40rem;
 }
 
 @media (max-width: 76.8rem) {
