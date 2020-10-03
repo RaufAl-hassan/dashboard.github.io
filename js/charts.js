@@ -107,8 +107,10 @@ const data = (labels, label, data, backgroundColor) => {
       {
         label,
         data,
-        backgroundColor,
-        borderWidth: 1,
+        backgroundColor: backgroundColor,
+        borderWidth: 2,
+        borderColor: "#fff",
+        borderHover: 0.5,
       },
     ],
   };
@@ -135,13 +137,25 @@ const options = () => {
   };
 };
 
-//  create chart objz
+//  create chart obj
 const newChart = (chartUI, type, data, options) => {
   return new Chart(chartUI, {
     type,
     data,
     options,
   });
+};
+
+// determine chart color
+const chartBackground = (
+  type,
+  backgroundColor,
+  defaultBackground = "steelblue"
+) => {
+  if (type === "bar" || type === "horizontalBar" || type === "line")
+    return defaultBackground;
+
+  return backgroundColor;
 };
 
 // display chart base on season
@@ -168,7 +182,7 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
   };
 
   switch (season) {
-    case "day":
+    case "days":
       return newChart(
         chartUI,
         type,
@@ -176,7 +190,7 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
           daysLabel,
           datus.label,
           displayDataBaseOnSection(season, datus),
-          daysBackgroundColor
+          chartBackground(type, daysBackgroundColor)
         ),
         options
       );
@@ -188,7 +202,7 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
           yearLabel,
           datus.label,
           displayDataBaseOnSection(season, datus),
-          yearBackgroundColor
+          chartBackground(type, yearBackgroundColor)
         ),
         options
       );
@@ -200,7 +214,7 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
           yearsLabel,
           datus.label,
           displayDataBaseOnSection(season, datus),
-          yearsBackgroundColor
+          chartBackground(type, yearsBackgroundColor)
         ),
         options
       );
@@ -212,22 +226,12 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
           monthLabel,
           datus.label,
           displayDataBaseOnSection(season, datus),
-          monthBackgroundColor
+          chartBackground(type, monthBackgroundColor)
         ),
         options
       );
     default:
-      return newChart(
-        chartUI,
-        type,
-        data(
-          daysLabel,
-          datus.label,
-          displayDataBaseOnSection(season, datus),
-          daysBackgroundColor
-        ),
-        options
-      );
+      return null;
   }
 };
 
@@ -235,13 +239,23 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
 let ordersChart = newChart(
   orderChartUI,
   chartTypes[0].value,
-  data(daysLabel, "orders", daysDataForOrders, daysBackgroundColor),
+  data(
+    daysLabel,
+    "orders",
+    daysDataForOrders,
+    chartBackground(chartTypes[0].value, daysBackgroundColor)
+  ),
   options
 );
 let visitorChart = newChart(
   vistorsChartUI,
   chartTypes[1].value,
-  data(daysLabel, "visitors", daysDataforVistors, daysBackgroundColor),
+  data(
+    daysLabel,
+    "visitors",
+    daysDataforVistors,
+    chartBackground(chartTypes[1].value)
+  ),
   options
 );
 
