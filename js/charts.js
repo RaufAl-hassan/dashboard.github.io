@@ -1,3 +1,29 @@
+// generate random data for chart
+const generateData = (dataLength, max = 100) => {
+  const data = [];
+  for (let i = 0; i < dataLength; i++) {
+    data.push(Math.floor(Math.random() * max));
+  }
+  return data;
+};
+
+// generate random background colors
+const generateBackgroundColor = (dataLength) => {
+  const data = [];
+  for (let i = 0; i < dataLength; i++) {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    data.push(`rgb(${r}, ${g}, ${b})`);
+  }
+  return data;
+};
+
+const daysLabel = ["mon", "tues", "wens", "thurs", "fri", "sat", "sun"];
+const daysDataForOrders = [...generateData(7)];
+const daysDataforVistors = [...generateData(7)];
+const daysBackgroundColor = [...generateBackgroundColor(7)];
+
 const yearLabel = [
   "Jan",
   "Feb",
@@ -12,10 +38,9 @@ const yearLabel = [
   "Nov",
   "Dec",
 ];
-const yearData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
-
-const daysLabel = ["mon", "tues", "wens", "thurs", "fri", "sat", "sun"];
-const daysData = [10, 20, 30, 40, 50, 60, 5];
+const yearDataForVistors = [...generateData(12)];
+const yearDataForOrders = [...generateData(12)];
+const yearBackgroundColor = [...generateBackgroundColor(12)];
 
 const monthLabel = [
   1,
@@ -49,83 +74,14 @@ const monthLabel = [
   29,
   30,
 ];
-const monthData = [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-  21,
-  22,
-  23,
-  24,
-  25,
-  26,
-  27,
-  28,
-  29,
-  30,
-];
+const monthDataForOrders = [...generateData(31)];
+const monthDataForVisitors = [...generateData(31)];
+const monthBackgroundColor = [...generateBackgroundColor(31)];
 
 const yearsLabel = [2015, 2016, 2017, 2018, 2019, 2020];
-const yearsData = [1, 2, 3, 4, 5, 6];
-
-// charts bg
-const daysBackgroundColor = [
-  "lightblue",
-  "royalblue",
-  "steelblue",
-  "blue",
-  "purple",
-  "pink",
-  "lightpink",
-];
-const yearsBackgroundColor = [
-  ...daysBackgroundColor,
-  "violet",
-  "indigo",
-  "gold",
-  "orange",
-  "yellow",
-];
-const yearBackgroundColor = [...yearsBackgroundColor];
-const monthBackgroundColor = [
-  ...yearsBackgroundColor,
-  "lightyellow",
-  "black",
-  "#333",
-  "#1e1e1e",
-  "#445",
-  "#753762",
-  "#972",
-  "#421",
-  "#142",
-  "#000",
-  "#777",
-  "#888",
-  "#999",
-  "#222",
-  "#444",
-  "red",
-  "#535",
-  "#135",
-  "#555",
-];
+const yearsDataForOrders = [...generateData(6)];
+const yearsDataForVisitors = [...generateData(6)];
+const yearsBackgroundColor = [...generateBackgroundColor(6)];
 
 let orderChartUI = document.querySelector("#orders-chart").getContext("2d");
 let vistorsChartUI = document.querySelector("#visitors-chart").getContext("2d");
@@ -190,40 +146,86 @@ const newChart = (chartUI, type, data, options) => {
 
 // display chart base on season
 const changeSeasonChart = (season, chartUI, type, datus, options) => {
+  // display data on charts section
+  const displayDataBaseOnSection = (season, datus) => {
+    switch (season) {
+      case "days":
+        if (datus.label === "orders") return daysDataForOrders;
+        if (datus.label === "visitors") return daysDataforVistors;
+      case "year":
+        if (datus.label === "orders") return yearDataForOrders;
+        if (datus.label === "visitors") return yearDataForVistors;
+      case "month":
+        if (datus.label === "orders") return monthDataForOrders;
+        if (datus.label === "visitors") return monthDataForVisitors;
+      case "years":
+        if (datus.label === "orders") return yearsDataForOrders;
+        if (datus.label === "visitors") return yearsDataForVisitors;
+
+      default:
+        return;
+    }
+  };
+
   switch (season) {
     case "day":
       return newChart(
         chartUI,
         type,
-        data(daysLabel, datus.label, daysData, daysBackgroundColor),
+        data(
+          daysLabel,
+          datus.label,
+          displayDataBaseOnSection(season, datus),
+          daysBackgroundColor
+        ),
         options
       );
     case "year":
       return newChart(
         chartUI,
         type,
-        data(yearLabel, datus.label, yearData, yearBackgroundColor),
+        data(
+          yearLabel,
+          datus.label,
+          displayDataBaseOnSection(season, datus),
+          yearBackgroundColor
+        ),
         options
       );
     case "years":
       return newChart(
         chartUI,
         type,
-        data(yearsLabel, datus.label, yearsData, yearsBackgroundColor),
+        data(
+          yearsLabel,
+          datus.label,
+          displayDataBaseOnSection(season, datus),
+          yearsBackgroundColor
+        ),
         options
       );
     case "month":
       return newChart(
         chartUI,
         type,
-        data(monthLabel, datus.label, monthData, monthBackgroundColor),
+        data(
+          monthLabel,
+          datus.label,
+          displayDataBaseOnSection(season, datus),
+          monthBackgroundColor
+        ),
         options
       );
     default:
       return newChart(
         chartUI,
         type,
-        data(daysLabel, datus.label, daysData, daysBackgroundColor),
+        data(
+          daysLabel,
+          datus.label,
+          displayDataBaseOnSection(season, datus),
+          daysBackgroundColor
+        ),
         options
       );
   }
@@ -233,13 +235,13 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
 let ordersChart = newChart(
   orderChartUI,
   chartTypes[0].value,
-  data(daysLabel, "orders", daysData, daysBackgroundColor),
+  data(daysLabel, "orders", daysDataForOrders, daysBackgroundColor),
   options
 );
 let visitorChart = newChart(
   vistorsChartUI,
   chartTypes[1].value,
-  data(daysLabel, "visitors", daysData, daysBackgroundColor),
+  data(daysLabel, "visitors", daysDataforVistors, daysBackgroundColor),
   options
 );
 
