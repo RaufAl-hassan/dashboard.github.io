@@ -1,5 +1,5 @@
 // generate random data for chart
-const generateData = (dataLength, max = 100) => {
+const generateData = (dataLength, max = 1000) => {
   const data = [];
   for (let i = 0; i < dataLength; i++) {
     data.push(Math.floor(Math.random() * max));

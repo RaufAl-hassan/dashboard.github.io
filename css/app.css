@@ -31,7 +31,7 @@
 
 .main-main .main-main-content .task-new-users {
   display: grid;
-  grid-template-columns: 8fr 3fr;
+  grid-template-columns: 7fr 4fr;
   grid-gap: 1rem;
 }
 
@@ -50,9 +50,17 @@
   width: 100%;
 }
 
+.login-main {
+  height: 80vh;
+}
+
 @media (max-width: 76.8rem) {
   .main-main .main-main-content .shop-details-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main-main .main-main-content .task-new-users {
+    grid-template-columns: 1fr;
   }
 }
 
