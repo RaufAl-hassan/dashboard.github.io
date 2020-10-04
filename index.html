@@ -397,8 +397,30 @@
         <!-- end task new user section -->
         <!--chart-->
         <section class="chart">
-          <h2 class="d-flex justify-content-between">
-            <span><i class="fa fa-chart-line"></i> Charts</span>
+          <h2 class="d-flex justify-content-between mb-1">
+            <span
+              ><i class="fa fa-chart-line"></i> Charts
+              <select
+                name=""
+                class="form-select bg-white change-all-chart-type"
+              >
+                <option value="bar">Bar Chart</option>
+                <option value="line">Line Chart</option>
+                <option value="pie">Pie Chart</option>
+                <option value="horizontalBar">Horizontal Bar</option>
+                <option value="doughnut">Doughnut</option>
+                <option value="polarArea">Polar Area</option>
+              </select>
+              <select
+                name=""
+                class="form-select bg-white change-all-chart-season"
+              >
+                <option value="days">Days</option>
+                <option value="year">Year</option>
+                <option value="years">Years</option>
+                <option value="month">month</option>
+              </select>
+            </span>
             <span><i class="fab fa-microsoft"></i></span>
           </h2>
           <div class="charts-wrapper">

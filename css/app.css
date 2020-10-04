@@ -93,10 +93,6 @@
     grid-gap: 1rem;
   }
 
-  .main-main .main-main-content .chart article canvas {
-    min-height: 40rem !important;
-  }
-
   .main-main .main-main-content .chart .charts-wrapper {
     grid-template-columns: 1fr;
   }

@@ -91,12 +91,16 @@ const yearsDataForUsers = [...generateData(6)];
 const yearsDataForSales = [...generateData(6)];
 const yearsBackgroundColor = [...generateBackgroundColor(6)];
 
-let orderChartUI = document.querySelector("#orders-chart").getContext("2d");
-let vistorsChartUI = document.querySelector("#visitors-chart").getContext("2d");
-let usersChartUI = document.querySelector("#users-chart").getContext("2d");
-let salesChartUI = document.querySelector("#sales-chart").getContext("2d");
+const orderChartUI = document.querySelector("#orders-chart").getContext("2d");
+const vistorsChartUI = document
+  .querySelector("#visitors-chart")
+  .getContext("2d");
+const usersChartUI = document.querySelector("#users-chart").getContext("2d");
+const salesChartUI = document.querySelector("#sales-chart").getContext("2d");
 const seasonsUI = document.querySelectorAll(".season");
 const chartsTypeUI = document.querySelectorAll(".chart-type");
+const changeAllChartType = document.querySelector(".change-all-chart-type");
+const changeAllChartSeason = document.querySelector(".change-all-chart-season");
 
 // global data
 let chartTypes = [],
@@ -249,50 +253,65 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
 };
 
 //instantiate chart obj
-let ordersChart = newChart(
-  orderChartUI,
-  chartTypes[0].value,
-  data(
-    daysLabel,
-    "orders",
-    daysDataForOrders,
-    chartBackground(chartTypes[0].value, daysBackgroundColor)
-  ),
-  options
-);
-let visitorChart = newChart(
-  vistorsChartUI,
-  chartTypes[1].value,
-  data(
-    daysLabel,
-    "visitors",
-    daysDataforVistors,
-    chartBackground(chartTypes[1].value)
-  ),
-  options
-);
-let usersChart = newChart(
-  usersChartUI,
-  chartTypes[2].value,
-  data(
-    daysLabel,
-    "Users",
-    daysDataforUsers,
-    chartBackground(chartTypes[2].value)
-  ),
-  options
-);
-let salesChart = newChart(
-  salesChartUI,
-  chartTypes[3].value,
-  data(
-    daysLabel,
-    "sales",
-    daysDataforSales,
-    chartBackground(chartTypes[3].value)
-  ),
-  options
-);
+let ordersChart, visitorChart, usersChart, salesChart;
+
+const initChart = (type) => {
+  ordersChart = newChart(
+    orderChartUI,
+    type ? type : chartTypes[0].value,
+    data(
+      daysLabel,
+      "orders",
+      daysDataForOrders,
+      chartBackground(type ? type : chartTypes[0].value, daysBackgroundColor)
+    ),
+    options
+  );
+  visitorChart = newChart(
+    vistorsChartUI,
+    type || chartTypes[1].value,
+    data(
+      daysLabel,
+      "visitors",
+      daysDataforVistors,
+      chartBackground(type ? type : chartTypes[1].value, daysBackgroundColor)
+    ),
+    options
+  );
+  usersChart = newChart(
+    usersChartUI,
+    type ? type : chartTypes[2].value,
+    data(
+      daysLabel,
+      "Users",
+      daysDataforUsers,
+      chartBackground(type ? type : chartTypes[2].value, daysBackgroundColor)
+    ),
+    options
+  );
+  salesChart = newChart(
+    salesChartUI,
+    type ? type : chartTypes[3].value,
+    data(
+      daysLabel,
+      "sales",
+      daysDataforSales,
+      chartBackground(type ? type : chartTypes[3].value, daysBackgroundColor)
+    ),
+    options
+  );
+};
+
+initChart();
+
+// hanlde chage all chart type
+changeAllChartType.addEventListener("change", (e) => {
+  // destroy all chart
+  [ordersChart, visitorChart, usersChart, salesChart].forEach((chart) => {
+    chart.destroy();
+  });
+  initChart(e.target.value);
+});
 
 // handle changes when chartType or season changes
 const manipulateChart = (e) => {
