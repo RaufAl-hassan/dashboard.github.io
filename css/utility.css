@@ -432,7 +432,7 @@ footer {
 .form-append input {
   background: #ddd;
   padding: 0.7rem;
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 .form-append input {
