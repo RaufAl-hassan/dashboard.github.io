@@ -168,7 +168,7 @@ img {
 
 footer {
   background: var(--blackColor);
-  color: var(--whiteColor);
+  color: var(--greyColor);
 }
 .d-flex {
   display: flex;
@@ -408,7 +408,7 @@ footer {
   background: var(--lightColor);
   color: var(--blackColor);
   border: none;
-  padding: 1rem;
+  padding: 1rem 0rem;
 }
 
 .form-control {
@@ -432,7 +432,7 @@ footer {
 .form-append input {
   background: #ddd;
   padding: 0.7rem;
-  font-weight: 600;
+  font-weight: bolder;
 }
 
 .form-append input {
