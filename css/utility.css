@@ -166,6 +166,10 @@ img {
   padding: 1rem 2rem !important;
 }
 
+footer {
+  background: var(--blackColor);
+  color: var(--whiteColor);
+}
 .d-flex {
   display: flex;
 }
@@ -217,6 +221,9 @@ img {
 .p-1 {
   padding: 1rem;
 }
+.p-2 {
+  padding: 2rem;
+}
 
 .px-1 {
   padding: 0 1rem;
@@ -262,6 +269,10 @@ img {
 .bg-steelbue {
   background: linear-gradient(royalblue, steelblue) !important;
   color: #fff;
+}
+.bg-white {
+  background: #fff !important;
+  color: #111 !important;
 }
 
 .active {
@@ -309,8 +320,16 @@ img {
 
 .card {
   background: var(--whiteColor);
-  height: 100%;
   border-radius: 0.2rem 0.2rem 0.2rem #ccc;
+}
+
+.card-outline {
+  border: 1px solid #ddd;
+}
+
+.b-radius {
+  border-radius: 0.3rem;
+  border-radius: 0.2rem 0.2rem 0.2rem #ddd;
 }
 
 /* progress */
@@ -355,9 +374,9 @@ img {
   font-size: 1.8rem;
   padding: 0.5rem 1rem;
   background: var(--lightColor);
-  display: inline-block;
   text-align: center;
-  margin: 1rem 0.5rem;
+  display: inline-block;
+  margin: 1rem 0;
   cursor: pointer;
 }
 
@@ -368,6 +387,16 @@ img {
 
 .btn-dark {
   background: #333;
+  color: var(--whiteColor);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-block-black {
+  background: #000;
   color: var(--whiteColor);
 }
 
@@ -388,6 +417,40 @@ img {
   padding: 0.5rem;
   outline-color: #333;
   outline-width: 0.1;
+}
+
+.form-append {
+  position: relative;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-append,
+.form-append input {
+  background: #ddd;
+  padding: 0.7rem;
+  font-weight: bolder;
+}
+
+.form-append input {
+  border: none;
+  outline: none;
+}
+
+.form-append .append-icon {
+  cursor: pointer;
+  text-align: center;
+}
+
+.form-append .append-icon i {
+  display: block;
+}
+
+.form-append .append-icon small {
+  font-size: 1rem;
 }
 
 .d-none {
