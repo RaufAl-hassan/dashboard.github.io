@@ -40,7 +40,7 @@ const yearLabel = [
   "Nov",
   "Dec",
 ];
-const yearDataForVistors = [...generateData(12)];
+const yearDataForVisitors = [...generateData(12)];
 const yearDataForOrders = [...generateData(12)];
 const yearDataForUsers = [...generateData(12)];
 const yearDataForSales = [...generateData(12)];
@@ -91,7 +91,7 @@ const yearsDataForUsers = [...generateData(6)];
 const yearsDataForSales = [...generateData(6)];
 const yearsBackgroundColor = [...generateBackgroundColor(6)];
 
-const orderChartUI = document.querySelector("#orders-chart").getContext("2d");
+const ordersChartUI = document.querySelector("#orders-chart").getContext("2d");
 const vistorsChartUI = document
   .querySelector("#visitors-chart")
   .getContext("2d");
@@ -187,7 +187,7 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
       case "days":
         return renderDataBaseOnSeason(daysDataForOrders);
       case "year":
-        return renderDataBaseOnSeason(yearDataForVistors);
+        return renderDataBaseOnSeason(yearDataForVisitors);
       case "month":
         return renderDataBaseOnSeason(monthDataForVisitors);
       case "years":
@@ -253,28 +253,69 @@ const changeSeasonChart = (season, chartUI, type, datus, options) => {
 };
 
 //instantiate chart obj
-let ordersChart, visitorChart, usersChart, salesChart;
+let ordersChart, visitorsChart, usersChart, salesChart;
 
-const initChart = (type) => {
+const initChart = (
+  type,
+  label = {
+    days: daysLabel,
+    month: monthLabel,
+    year: yearLabel,
+    years: yearsLabel,
+  },
+  bg = {
+    days: daysBackgroundColor,
+    month: monthBackgroundColor,
+    year: yearBackgroundColor,
+    years: yearsBackgroundColor,
+  },
+  labelData = {
+    orders: {
+      days: daysDataForOrders,
+      month: monthDataForOrders,
+      year: yearDataForOrders,
+      years: yearsDataForOrders,
+    },
+    visitors: {
+      days: daysDataforVistors,
+      month: monthDataForVisitors,
+      year: yearDataForVisitors,
+      years: yearsDataForVisitors,
+    },
+    users: {
+      days: daysDataforUsers,
+      month: monthDataForVisitors,
+      year: yearDataForVisitors,
+      years: yearsDataForVisitors,
+    },
+    sales: {
+      days: daysDataforSales,
+      month: monthDataForSales,
+      year: yearDataForSales,
+      years: yearsDataForSales,
+    },
+  },
+  labelDataSelector = changeAllChartSeason.value
+) => {
   ordersChart = newChart(
-    orderChartUI,
+    ordersChartUI,
     type ? type : chartTypes[0].value,
     data(
-      daysLabel,
+      label[labelDataSelector],
       "orders",
-      daysDataForOrders,
-      chartBackground(type ? type : chartTypes[0].value, daysBackgroundColor)
+      labelData.orders[labelDataSelector],
+      chartBackground(type ? type : chartTypes[0].value, bg[labelDataSelector])
     ),
     options
   );
-  visitorChart = newChart(
+  visitorsChart = newChart(
     vistorsChartUI,
     type || chartTypes[1].value,
     data(
-      daysLabel,
+      label[labelDataSelector],
       "visitors",
-      daysDataforVistors,
-      chartBackground(type ? type : chartTypes[1].value, daysBackgroundColor)
+      labelData.visitors[labelDataSelector],
+      chartBackground(type ? type : chartTypes[1].value, bg[labelDataSelector])
     ),
     options
   );
@@ -282,10 +323,10 @@ const initChart = (type) => {
     usersChartUI,
     type ? type : chartTypes[2].value,
     data(
-      daysLabel,
+      label[labelDataSelector],
       "Users",
-      daysDataforUsers,
-      chartBackground(type ? type : chartTypes[2].value, daysBackgroundColor)
+      labelData.users[labelDataSelector],
+      chartBackground(type ? type : chartTypes[2].value, bg[labelDataSelector])
     ),
     options
   );
@@ -293,10 +334,10 @@ const initChart = (type) => {
     salesChartUI,
     type ? type : chartTypes[3].value,
     data(
-      daysLabel,
+      label[labelDataSelector],
       "sales",
-      daysDataforSales,
-      chartBackground(type ? type : chartTypes[3].value, daysBackgroundColor)
+      labelData.sales[labelDataSelector],
+      chartBackground(type ? type : chartTypes[3].value, bg[labelDataSelector])
     ),
     options
   );
@@ -307,22 +348,28 @@ initChart();
 // hanlde chage all chart type
 changeAllChartType.addEventListener("change", (e) => {
   // destroy all chart
-  [ordersChart, visitorChart, usersChart, salesChart].forEach((chart) => {
+  [ordersChart, visitorsChart, usersChart, salesChart].forEach((chart) => {
     chart.destroy();
   });
   initChart(e.target.value);
+});
+// hanlde change all chart season
+changeAllChartSeason.addEventListener("change", (e) => {
+  // destroy all chart
+  [ordersChart, visitorsChart, usersChart, salesChart].forEach((chart) => {
+    chart.destroy();
+  });
+  initChart(changeAllChartType.value);
 });
 
 // handle changes when chartType or season changes
 const manipulateChart = (e) => {
   if (e.target.closest(".orders-chart")) {
-    // destroy chart
     ordersChart.destroy();
 
-    // redraw chart
     ordersChart = changeSeasonChart(
       seasons[0].value,
-      orderChartUI,
+      ordersChartUI,
       chartTypes[0].value,
       { label: "orders" },
       options
@@ -331,9 +378,9 @@ const manipulateChart = (e) => {
   }
   // apply on visitors chart
   if (e.target.closest(".visitors-chart")) {
-    visitorChart.destroy();
+    visitorsChart.destroy();
 
-    visitorChart = changeSeasonChart(
+    visitorsChart = changeSeasonChart(
       seasons[1].value,
       vistorsChartUI,
       chartTypes[1].value,
