@@ -294,8 +294,6 @@ let salesChart = newChart(
   options
 );
 
-console.log(chartTypes);
-
 // handle changes when chartType or season changes
 const manipulateChart = (e) => {
   if (e.target.closest(".orders-chart")) {
