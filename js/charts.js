@@ -1,5 +1,5 @@
 // generate random data for chart
-const generateData = (dataLength, max = 1000) => {
+const generateRandomData = (dataLength, max = 1000) => {
   const data = [];
   for (let i = 0; i < dataLength; i++) {
     data.push(Math.floor(Math.random() * max));
@@ -8,7 +8,7 @@ const generateData = (dataLength, max = 1000) => {
 };
 
 // generate random background colors
-const generateBackgroundColor = (dataLength) => {
+const generateRandomBackgroundColor = (dataLength) => {
   const data = [];
   for (let i = 0; i < dataLength; i++) {
     let r = Math.floor(Math.random() * 255);
@@ -20,11 +20,11 @@ const generateBackgroundColor = (dataLength) => {
 };
 
 const daysLabel = ["mon", "tues", "wens", "thurs", "fri", "sat", "sun"];
-const daysDataForOrders = [...generateData(7)];
-const daysDataforVistors = [...generateData(7)];
-const daysDataforUsers = [...generateData(7)];
-const daysDataforSales = [...generateData(7)];
-const daysBackgroundColor = [...generateBackgroundColor(7)];
+const daysDataForOrders = [...generateRandomData(7)];
+const daysDataforVistors = [...generateRandomData(7)];
+const daysDataforUsers = [...generateRandomData(7)];
+const daysDataforSales = [...generateRandomData(7)];
+const daysBackgroundColor = [...generateRandomBackgroundColor(7)];
 
 const yearLabel = [
   "Jan",
@@ -40,11 +40,11 @@ const yearLabel = [
   "Nov",
   "Dec",
 ];
-const yearDataForVisitors = [...generateData(12)];
-const yearDataForOrders = [...generateData(12)];
-const yearDataForUsers = [...generateData(12)];
-const yearDataForSales = [...generateData(12)];
-const yearBackgroundColor = [...generateBackgroundColor(12)];
+const yearDataForVisitors = [...generateRandomData(12)];
+const yearDataForOrders = [...generateRandomData(12)];
+const yearDataForUsers = [...generateRandomData(12)];
+const yearDataForSales = [...generateRandomData(12)];
+const yearBackgroundColor = [...generateRandomBackgroundColor(12)];
 
 const monthLabel = [
   1,
@@ -78,18 +78,18 @@ const monthLabel = [
   29,
   30,
 ];
-const monthDataForOrders = [...generateData(31)];
-const monthDataForVisitors = [...generateData(31)];
-const monthDataForUsers = [...generateData(31)];
-const monthDataForSales = [...generateData(31)];
-const monthBackgroundColor = [...generateBackgroundColor(31)];
+const monthDataForOrders = [...generateRandomData(31)];
+const monthDataForVisitors = [...generateRandomData(31)];
+const monthDataForUsers = [...generateRandomData(31)];
+const monthDataForSales = [...generateRandomData(31)];
+const monthBackgroundColor = [...generateRandomBackgroundColor(31)];
 
 const yearsLabel = [2015, 2016, 2017, 2018, 2019, 2020];
-const yearsDataForOrders = [...generateData(6)];
-const yearsDataForVisitors = [...generateData(6)];
-const yearsDataForUsers = [...generateData(6)];
-const yearsDataForSales = [...generateData(6)];
-const yearsBackgroundColor = [...generateBackgroundColor(6)];
+const yearsDataForOrders = [...generateRandomData(6)];
+const yearsDataForVisitors = [...generateRandomData(6)];
+const yearsDataForUsers = [...generateRandomData(6)];
+const yearsDataForSales = [...generateRandomData(6)];
+const yearsBackgroundColor = [...generateRandomBackgroundColor(6)];
 
 const ordersChartUI = document.querySelector("#orders-chart").getContext("2d");
 const vistorsChartUI = document

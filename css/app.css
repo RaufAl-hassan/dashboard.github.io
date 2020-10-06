@@ -42,12 +42,12 @@
 }
 
 .main-main .main-main-content .chart .charts-wrapper article {
-  min-height: 40rem;
-  overflow: hidden;
 }
 
 .main-main .main-main-content .chart article canvas {
   width: 100%;
+  min-height: 40rem;
+  overflow: hidden;
 }
 
 .login-main {
